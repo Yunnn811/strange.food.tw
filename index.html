@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>超商食物料理實驗室</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🏪 超商食物料理實驗室</h1>
+        <p>切換不同超商挑選食材，打造終極跨界美食！</p>
+        
+        <div class="section-title">步驟 1：選擇料理方法</div>
+        <div class="tab-group" id="method-tabs">
+            <button class="tab-btn active" onclick="setMethod('微波爐', this)">微波爐</button>
+            <button class="tab-btn" onclick="setMethod('單純混合', this)">單純混合</button>
+        </div>
+
+        <div class="section-title">步驟 2：選擇超商挑食材</div>
+        <div class="tab-group">
+            <button class="tab-btn store-all active" onclick="filterStore('all', this)">🛒 四間都有</button>
+            <button class="tab-btn store-711" onclick="filterStore('711', this)">7-11</button>
+            <button class="tab-btn store-family" onclick="filterStore('family', this)">全家</button>
+            <button class="tab-btn store-hilife" onclick="filterStore('hilife', this)">萊爾富</button>
+            <button class="tab-btn store-ok" onclick="filterStore('ok', this)">OK</button>
+        </div>
+
+        <div class="section-title">步驟 3：找不到想加的？自己新增！</div>
+        <div class="add-food-section">
+            <input type="text" id="new-food-name" placeholder="輸入食材 (例如:草莓大福)">
+            <select id="new-food-store">
+                <option value="all">四間都有</option>
+                <option value="711">7-11</option>
+                <option value="family">全家</option>
+                <option value="hilife">萊爾富</option>
+                <option value="ok">OK</option>
+            </select>
+            <button class="add-btn" onclick="addNewFood()">➕ 加入食材資料庫</button>
+        </div>
+        
+        <div class="grid" id="ingredients-grid"></div>
+        
+        <div class="section-title">你選擇料理的食材 (點擊可移除)：</div>
+        <div class="selected-cart" id="selected-cart">
+            <span style="color: #bdc3c7;">目前空空如也... 點擊上方食材加入！</span>
+        </div>
+
+        <button class="mix-btn" onclick="mixFoods()">開始料理！</button>
+        
+        <div class="result" id="result-box">等待大廚上菜...</div>
+    </div>
+
+    <div id="sub-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">✖</span>
+            <h2 id="modal-title" style="margin-top: 0; color: #2c3e50;">選擇細項</h2>
+            <div class="grid" id="modal-grid" style="margin-bottom: 0;"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

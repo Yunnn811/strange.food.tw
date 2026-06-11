@@ -1,0 +1,251 @@
+/* ===== 基礎設定 ===== */
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background-color: #f4f7f6; /* 外層淡淡的灰綠色 */
+    color: #333; 
+    text-align: center; 
+    margin: 0; 
+    padding: 20px; 
+}
+
+h1 { color: #2c3e50; margin-bottom: 5px; }
+p { color: #7f8c8d; margin-bottom: 25px; }
+
+/* 主要白色方塊 */
+.container { 
+    max-width: 700px; 
+    margin: auto; 
+    background: white; 
+    padding: 30px 40px; 
+    border-radius: 16px; 
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06); 
+}
+
+/* ===== 標題與排版 ===== */
+.section-title {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #2c3e50;
+    text-align: left;
+    margin: 25px 0 15px 5px;
+    border-left: 5px solid #3498db; /* 左側粗藍線 */
+    padding-left: 10px;
+}
+
+/* ===== 按鈕群組 (圓角膠囊風格) ===== */
+.tab-group { 
+    display: flex; 
+    gap: 12px; 
+    justify-content: flex-start; 
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 10px 20px;
+    border: 2px solid #e0e6ed;
+    background: #fff;
+    border-radius: 30px; /* 變成可愛的膠囊狀 */
+    cursor: pointer;
+    font-weight: bold;
+    color: #7f8c8d;
+    transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+    border-color: #bdc3c7;
+    background: #f8f9f9;
+}
+
+/* 啟動狀態的顏色設定 */
+.tab-btn.active { background: #3498db; color: white; border-color: #3498db; }
+.tab-btn.store-711.active { background: #f37021; border-color: #f37021; } /* 7-11 橘色 */
+.tab-btn.store-family.active { background: #00a0e9; border-color: #00a0e9; }
+.tab-btn.store-hilife.active { background: #e60012; border-color: #e60012; }
+.tab-btn.store-ok.active { background: #ce1126; border-color: #ce1126; }
+.tab-btn.store-all.active { background: #2ecc71; border-color: #2ecc71; }
+
+/* ===== 新增食材區 (虛線框) ===== */
+.add-food-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    border: 2px dashed #bdc3c7;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.add-food-section input, .add-food-section select {
+    padding: 10px 15px;
+    border: 1px solid #e0e6ed;
+    border-radius: 8px;
+    font-size: 1em;
+    outline: none;
+}
+
+.add-food-section input:focus, .add-food-section select:focus {
+    border-color: #2ecc71;
+}
+
+.add-btn {
+    padding: 10px 20px;
+    background: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.add-btn:hover { background: #27ae60; }
+
+/* ===== 食材顯示區塊 (淺灰背景 + 白色卡片) ===== */
+.grid { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 15px; 
+    justify-content: center; 
+    margin-bottom: 25px; 
+    min-height: 100px;
+    background: #f8f9fa; /* 淺灰色底 */
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.item { 
+    padding: 15px 20px; 
+    border: 1px solid #e0e6ed; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    transition: all 0.2s ease; 
+    background: #fff; /* 白色卡片 */
+    font-size: 1em; 
+    color: #34495e;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.item:hover { 
+    border-color: #3498db; 
+    transform: translateY(-3px); 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.item.selected { 
+    background: #2c3e50; 
+    color: white; 
+    border-color: #2c3e50; 
+}
+
+/* ===== 資料夾專屬按鈕外觀 ===== */
+.folder-btn {
+    border-color: #f39c12; 
+    background: #fffdf5;
+    color: #d35400;
+}
+.folder-btn:hover { 
+    background: #f39c12; 
+    color: white; 
+}
+
+/* ===== 購物車 (已選食材) ===== */
+.selected-cart {
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 10px; 
+    justify-content: center; 
+    margin-bottom: 30px;
+    padding: 15px; 
+    background: #fff; 
+    border-radius: 12px;
+    border: 2px dashed #3498db; 
+    min-height: 25px;
+    align-items: center;
+}
+
+.cart-item {
+    background: #2c3e50; 
+    color: white; 
+    padding: 8px 15px; 
+    border-radius: 20px; 
+    font-size: 0.9em; 
+    cursor: pointer; 
+    transition: 0.2s;
+    font-weight: bold;
+}
+
+.cart-item:hover { background: #e74c3c; }
+
+/* ===== 大大的紅色料理按鈕 ===== */
+.mix-btn { 
+    padding: 18px 30px; 
+    background: #e74c3c; 
+    color: white; 
+    border: none; 
+    border-radius: 12px; 
+    font-size: 1.2em; 
+    cursor: pointer; 
+    font-weight: bold; 
+    width: 100%; 
+    transition: 0.2s; 
+    box-shadow: 0 6px 12px rgba(231, 76, 60, 0.2);
+}
+
+.mix-btn:hover { 
+    background: #c0392b; 
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(231, 76, 60, 0.3);
+}
+
+/* ===== 結果顯示區 ===== */
+.result { 
+    margin-top: 25px; 
+    padding: 20px; 
+    border-radius: 12px; 
+    background: #f8f9f9; 
+    border: 2px dashed #bdc3c7;
+    font-size: 1.2em; 
+    color: #2c3e50;
+    line-height: 1.6;
+}
+
+/* ===== 彈出視窗 (Modal) ===== */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.5); 
+    align-items: center; 
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #fff; 
+    padding: 30px; 
+    border-radius: 16px; 
+    width: 85%; 
+    max-width: 550px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.close-btn {
+    position: absolute; 
+    top: 15px; 
+    right: 20px; 
+    font-size: 24px; 
+    cursor: pointer; 
+    color: #bdc3c7;
+    transition: 0.2s;
+}
+
+.close-btn:hover { color: #e74c3c; }
